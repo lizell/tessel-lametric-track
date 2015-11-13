@@ -10,8 +10,10 @@
   "license": "UNLICENSED",
   "dependencies": {
     "babel": "^5.8.29",
+    "co-request": "^1.0.0",
     "co-views": "^2.1.0",
     "koa": "^1.1.1",
+    "koa-router": "^5.2.3",
     "swig": "^1.4.2"
   }
 }
