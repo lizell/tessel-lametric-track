@@ -1,0 +1,17 @@
+{
+  "name": "tessel-track",
+  "version": "0.0.1",
+  "description": "Hobby Tessel Tracker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --require babel/register src"
+  },
+  "author": "Christian Lizell <christian.lizell@aftonbladet.se> (https://twitter.com/lizell)",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "babel": "^5.8.29",
+    "co-views": "^2.1.0",
+    "koa": "^1.1.1",
+    "swig": "^1.4.2"
+  }
+}
