@@ -14,12 +14,22 @@ const render = views(__dirname + '/assets', { map: { html: 'swig' } });
 import routerFactory from 'koa-router';
 const router = routerFactory({ prefix: '/' });
 
+const poorMansItemCounter = {};
+
 function* personal() {
     this.body = yield render('personal.html', { name: this.params.name });
 }
 
 function* track() {
-    const text = this.params.item.replace(/[\\n\\r]+/, '');
+    const item = this.params.item.replace(/[\\n\\r]+/, '');
+
+    if (!poorMansItemCounter[item]) {
+        poorMansItemCounter[item] = 0;
+    }
+    poorMansItemCounter[item]++;
+
+    const text = `${item}: ${poorMansItemCounter[item]}`;
+
     request({
         method: 'POST',
         url: lmAppUrl,
